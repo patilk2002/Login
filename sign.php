@@ -2,7 +2,7 @@
 include_once 'dbConnection.php';
 ob_start();
 $name = $_POST['name'];
-$name= ucwords(strtolower($name));
+$name = ucwords(strtolower($name));
 // $gender = $_POST['gender'];
 $email = $_POST['email'];
 // $college = $_POST['college'];
@@ -24,18 +24,14 @@ $password = stripslashes($password);
 $password = addslashes($password);
 $password = md5($password);
 
-$q3=mysqli_query($con,"INSERT INTO user VALUES  ('$name' ,'$email' , '$password')");
-if($q3)
-{
-session_start();
-$_SESSION["email"] = $email;
-$_SESSION["name"] = $name;
+$q3 = mysqli_query($con, "INSERT INTO user VALUES  ('$name' ,'$email' , '$password')");
+if ($q3) {
+    session_start();
+    $_SESSION["email"] = $email;
+    $_SESSION["name"] = $name;
 
-header("location:success.html?q=1");
-}
-else
-{
-header("location:index.php?q7=Email Already Registered!!!");
+    header("location:success.html?q=1");
+} else {
+    header("location:index.php?q7=Email Already Registered!!!");
 }
 ob_end_flush();
-?>
