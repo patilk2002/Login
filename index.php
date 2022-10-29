@@ -202,15 +202,30 @@
         <!-- <img src="assets/images/logo.png" style="height: 10%;width: 50%;"> -->
         <h1>Sign In</h1>
 
-        <form action="login.php?q=done.html" method="POST">
-          <input type="email" placeholder="Email" autocomplete="off" /><br />
+        <form action="login.php?q=successLogin.html" method="POST" name="login">
+          <input
+            type="email"
+            placeholder="Email"
+            autocomplete="off"
+            name="email"
+            value="<?php if(isset($_COOKIE['uname'])) echo $_COOKIE['uname'] ?>"
+          /><br />
           <input
             type="password"
             placeholder="Password"
             autocomplete="off"
+            name="password"
+            value="<?php if(isset($_COOKIE['password'])) echo $_COOKIE['password'] ?>"
           /><br /><br />
+          <input type="checkbox" value="1" , name="remember" />Keep me login:
+          <br /><br />
           <a id="forgot-pass" href="#">Forgot your password?</a><br /><br />
-          <input class="submit-btn" type="submit" value="Sign In" />
+          <input
+            class="submit-btn"
+            type="submit"
+            value="Sign In"
+            name="login"
+          />
         </form>
       </div>
       <div id="register">
