@@ -7,6 +7,11 @@ include_once 'dbConnection.php';
 $ref = @$_GET['q'];
 $email = $_POST['email'];
 $password = $_POST['password'];
+$remember = $_POST['remember'];
+if($remember ==1){
+	setcookie('uname' , $email , time()+60*60 , "/");
+	setcookie('password' , $password , time()+60*60 , "/");
+}
 
 $email = stripslashes($email);
 $email = addslashes($email);
@@ -23,7 +28,7 @@ if ($count == 1) {
 	}
 	$_SESSION["name"] = $name;
 	$_SESSION["email"] = $email;
-	header("location:done.html?q=1");
+	header("location:successfulLogin.html?q=1");
 } else
 	header("location:$ref?w=Wrong Username or Password");
 	

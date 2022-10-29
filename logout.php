@@ -3,6 +3,6 @@
     // Destroy session
     if(session_destroy()) {
         // Redirecting To Home Page
-        header("location: index.html");
+        header("location: index.php");
     }
 ?>
