@@ -137,7 +137,7 @@
       }
       #cover p {
         font-weight: 300;
-        line-height: 22px;
+        line-height: 28px;
         padding: 10px 20px;
       }
       .sign-in {
@@ -193,7 +193,7 @@
       <!-- Cover Box -->
       <div id="cover">
         <!-- Sign Up Section -->
-        <img src="assets/images/logo3.png" style="height: 80px;margin-top: 10%;">
+        <img src="assets/images/logo3.png" style="height: 60px;margin-top: 10%;">
         <h1 class="sign-up">
         Welcome Back!
         </h1>
@@ -205,7 +205,7 @@
         <!-- Sign In Section -->
         <h1 class="sign-in">Hello There !</h1>
         <p class="sign-in">
-          A Revolutionary Step in the Online Examination System.It is an exceptional platform for conducting online exams.<br><br><span class='small-text'> already having an account </span>
+        Enter your personal details and start a journey with us. <br> A Revolutionary Step in the Online Examination System.It is an exceptional platform for conducting online exams.<br><br><span class='small-text'> already having an account </span>
         </p>
         <br />
         <a class="button sub sign-in" href="#">Sign In</a>
