@@ -1,9 +1,12 @@
 <html lang="en">
-    <head>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
     <style>
       @import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900");
@@ -91,7 +94,7 @@
       }
       #login h1,
       #register h1 {
-        padding: 20% 0 25px;
+        padding: 15% 0 25px;
       }
       #login h1 {
         color: #3aa7b1;
@@ -106,6 +109,9 @@
         letter-spacing: 0.3px;
         padding: 20px;
       }
+
+
+      
       #forgot-pass {
         border-bottom: 1px solid #ccc;
         color: #000;
@@ -127,12 +133,12 @@
         z-index: 5;
       }
       #cover h1 {
-        padding-top:30%;
+        padding-top: 10%;
       }
       #cover p {
         font-weight: 300;
         line-height: 22px;
-        padding: 30px 45px 40px;
+        padding: 10px 20px;
       }
       .sign-in {
         display: none;
@@ -141,6 +147,17 @@
         position: relative;
         top: -11px;
       }
+
+
+      .small-text{
+        border-bottom: 1px solid #ccc;
+        font-size: 12px;
+        font-weight: 500;
+        letter-spacing: 0.3px;
+        padding: 3px;
+        text-decoration: none;
+      }
+
       #cover:target {
         background: #3aaf9f;
         margin: 0;
@@ -176,19 +193,19 @@
       <!-- Cover Box -->
       <div id="cover">
         <!-- Sign Up Section -->
+        <img src="assets/images/logo3.png" style="height: 80px;margin-top: 10%;">
         <h1 class="sign-up">
-          Welcome Back!
+        Welcome Back!
         </h1>
         <p class="sign-up">
-          Atmost solution for catering industry needs for online examination<br><br>
-          <span> Don't have account </span> 
+        To keep connected with us please login with your personal info.<br>Atmost solution for catering industry needs for online examination<br><br>
+          <span class='small-text'> Don't have account </span> 
         </p>
-        
         <a class="button sign-up" href="#cover">Sign Up</a>
         <!-- Sign In Section -->
         <h1 class="sign-in">Hello There !</h1>
         <p class="sign-in">
-          A Revolutionary Step in the Online Examination System.It is an exceptional platform for conducting online exams.<br><br><span> already having an account </span>
+          A Revolutionary Step in the Online Examination System.It is an exceptional platform for conducting online exams.<br><br><span class='small-text'> already having an account </span>
         </p>
         <br />
         <a class="button sub sign-in" href="#">Sign In</a>
@@ -199,15 +216,30 @@
         <!-- <img src="assets/images/logo.png" style="height: 10%;width: 50%;"> -->
         <h1>Sign In</h1>
 
-        <form action="login.php?q=done.html" method="POST">
-          <input type="email" placeholder="Email" autocomplete="off" /><br />
+        <form action="login.php?q=successLogin.html" method="POST" name="login">
+          <input
+            type="email"
+            placeholder="Email"
+            autocomplete="off"
+            name="email"
+            value="<?php if(isset($_COOKIE['uname'])) echo $_COOKIE['uname'] ?>"
+          /><br />
           <input
             type="password"
             placeholder="Password"
             autocomplete="off"
+            name="password"
+            value="<?php if(isset($_COOKIE['password'])) echo $_COOKIE['password'] ?>"
           /><br /><br />
-          <a id="forgot-pass" href="#">Forgot your password?</a><br /><br />
-          <input class="submit-btn" type="submit" value="Sign In" />
+          <input type="checkbox" value="1" , name="remember" />Keep me login:
+          <br /><br />
+          <!-- <a id="forgot-pass" href="#">Forgot your password?</a><br /><br /> -->
+          <input
+            class="submit-btn"
+            type="submit"
+            value="Sign In"
+            name="login"
+          />
         </form>
       </div>
       <div id="register">
